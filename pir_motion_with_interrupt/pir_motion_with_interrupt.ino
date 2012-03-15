@@ -1,6 +1,10 @@
 /* pir motion sensor, using interrupt 
  *
- * attached to pin 2; using a 10k pull-down resistor
+ * attached to pin 12
+ * using a 10k pull-down resistor (probably unnecessary)
+ * 
+ * I'm using the parallax 555-28027, rev B
+ *
  * when activated, the pir motion sensor sends 5v to input pin; otherwise low
  */
  
