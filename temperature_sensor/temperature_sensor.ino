@@ -1,7 +1,8 @@
 /* temperature sensor
  *
  * with flat side with numbers facing toward you (mine says TMP / 36GZ / # 1139 / 217182
- *     left pin to 3.3V
+ *
+ *     left pin to 3.3V (5V would work too, but with 3.3V results are more precise)
  *     center pin to analog input 5
  *     right pin to ground
  *     
