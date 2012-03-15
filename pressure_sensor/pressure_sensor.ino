@@ -12,33 +12,32 @@
  * when max pressure:   sensor has  200 ohm resistance
  * if no pressure, connected to ground
  *
- * have LED attached to pin 11; lit brighter when photocell reads darker
+ * have LED attached to pin 11; lit brighter when more pressure
  */
 
-int photocellPin = 5;
+int pressurePin = 5;
 int LEDpin = 11;
 
 void setup(void)
 {
   Serial.begin(9600);
   pinMode(LEDpin, OUTPUT);
-  pinMode(photocellPin, INPUT);
 }
 
 void loop(void)
 {
-  int photocellReading;
+  int pressureReading;
   int LEDbrightness;
 
-  photocellReading = analogRead(photocellPin);
+  pressureReading = analogRead(pressurePin);
  
   Serial.print("Raw analog reading = ");
-  Serial.print(photocellReading);
+  Serial.print(pressureReading);
   // 0 = no pressure; 1023 = max pressure
 
   // make LED more bright when more pressure
-  if(photocellReading > 50) {
-    LEDbrightness = map(photocellReading, 50, 1023, 0, 255);
+  if(pressureReading > 50) {
+    LEDbrightness = map(pressureReading, 50, 1023, 0, 255);
 
     Serial.print("\tLED brightness = ");
     Serial.println(LEDbrightness);
