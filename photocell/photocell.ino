@@ -23,7 +23,6 @@ void setup(void)
 {
   Serial.begin(9600);
   pinMode(LEDpin, OUTPUT);
-  pinMode(photocellPin, INPUT);
 }
 
 void loop(void)
