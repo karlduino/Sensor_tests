@@ -9,3 +9,5 @@ Some code taken from the following
 
   http://www.ladyada.net/learn/sensors/
   http://bildr.org/2011/04/sensing-orientation-with-the-adxl335-arduino/
+
+licensed under GPL v3, http://www.gnu.org/copyleft/gpl.html
