@@ -2,13 +2,13 @@
   Put temperature sensor readings on web with cosm.com
   Karl Broman, 6 July 2012
 
-  Hardly changed from the PachubeClient example in the Ethernet library for Arduino
+  Hardly changed from the CosmClient example in the Ethernet library for Arduino
     created 15 March 2010
     modified 9 Apr 2012
     by Tom Igoe with input from Usman Haque and Joe Saavedra
-    http://arduino.cc/en/Tutorial/PachubeClient
+    http://arduino.cc/en/Tutorial/CosmClient
 
-  This sketch connects an analog sensor to Pachube (http://www.pachube.com)
+  This sketch connects an analog sensor to Cosm (http://www.cosm.com)
   using a Wiznet Ethernet shield. You can use the Arduino Ethernet shield, or
   the Adafruit Ethernet shield, either one will work, as long as it's got
   a Wiznet Ethernet module on board.
@@ -24,7 +24,7 @@
 
 #include "personal_data.h"  // don't want to include my personal info in github repos
 #ifndef APIKEY
-  #define APIKEY         "BJORcw9pne8DNh02LxIpZJF3Cd3VUzCrCPuffSo6mBtlDK2T" // replace your pachube api key here
+  #define APIKEY         "BJORcw9pne8DNh02LxIpZJF3Cd3VUzCrCPuffSo6mBtlDK2T" // replace your cosm api key here
   #define FEEDID         86795  // replace your feed ID
   #define USERAGENT      "blah" // user agent is the project name
 
@@ -43,12 +43,12 @@ EthernetClient client;
 
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
-IPAddress server(216,52,233,122);      // numeric IP for api.pachube.com
-//char server[] = "api.pachube.com";   // name address for pachube API
+IPAddress server(216,52,233,121);      // numeric IP for api.cosm.com
+//char server[] = "api.cosm.com";   // name address for cosm API
 
 unsigned long lastConnectionTime = 0;          // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                 // state of the connection last time through the main loop
-const unsigned long postingInterval = 10*1000; //delay between updates to Pachube.com
+const unsigned long postingInterval = 10*1000; //delay between updates to cosm.com
 
 void setup() {
   // Open serial communications and wait for port to open:
@@ -106,8 +106,8 @@ void sendData(int thisData) {
     client.print("PUT /v2/feeds/");
     client.print(FEEDID);
     client.println(".csv HTTP/1.1");
-    client.println("Host: api.pachube.com");
-    client.print("X-PachubeApiKey: ");
+    client.println("Host: api.cosm.com");
+    client.print("X-ApiKey: ");
     client.println(APIKEY);
     client.print("User-Agent: ");
     client.println(USERAGENT);
