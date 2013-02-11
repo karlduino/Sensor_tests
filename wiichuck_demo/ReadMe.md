@@ -1,5 +1,5 @@
 This is code for interfacing the Wii Nunchuck to an Arduino
-Taken from Todd Kurt, http://thingm.com
+Taken from [Todd Kurt](http://thingm.com)
 
 Original obtained from [here](http://todbot.com/blog/2008/02/18/wiichuck-wii-nunchuck-adapter-available/comment-page-10/)
 Also see [his github
